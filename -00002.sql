@@ -1,0 +1,8 @@
+CREATE SCHEMA common
+GO
+
+CREATE SCHEMA enderecos
+GO
+
+CREATE SCHEMA academy
+GO
