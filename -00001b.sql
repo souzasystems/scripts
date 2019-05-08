@@ -1,0 +1,2 @@
+INSERT INTO common.Usuarios(NomeUsuario, Privilegio, Senha, Inativo, DataInicio, LogIdUsuario, LogRotina)
+VALUES('SUPERVISOR', 'T', '877637C8DE18ACD86EB2D7260C79F002', 00, (SELECT getDate()), (SELECT IDENT_CURRENT('common.Usuarios')), 'I')
