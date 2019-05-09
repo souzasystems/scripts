@@ -19,24 +19,6 @@ BEGIN
           ,@ErrorSeverity INTEGER     = 00
           ,@ErrorState INTEGER        = 00
 
-   IF ISNULL(@NomeDistrito, '') = ''
-   BEGIN
-      SET @ErrorMessage = 'O nome do distrito não pode ficar em branco.' + CHAR(13) + CHAR(10)
-                        + 'Por favor, verifique!'
-
-      RAISERROR (@ErrorMessage, 09, 01)
-      RETURN
-   END
-
-   IF ISNULL(@IdCidade, 00) = 00
-   BEGIN
-      SET @ErrorMessage = 'A cidade a qual o distrito pertence não foi informada.' + CHAR(13) + CHAR(10)
-                        + 'Por favor, verifique!'
-
-      RAISERROR (@ErrorMessage, 09, 01)
-      RETURN
-   END
-
    BEGIN TRY
       BEGIN TRANSACTION
 

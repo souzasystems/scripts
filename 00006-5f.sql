@@ -7,9 +7,6 @@ GO
 CREATE PROCEDURE enderecos.sp_ConsultaTiposZona
 AS
 BEGIN
-   SET NOCOUNT ON
-   SET XACT_ABORT ON
-
    SELECT IdTipoZona
          ,DescricaoTipoZona
          ,LogIdUsuario

@@ -21,42 +21,6 @@ BEGIN
           ,@ErrorSeverity INTEGER     = 00
           ,@ErrorState INTEGER        = 00
 
-   IF ISNULL(@Cep, '') = ''
-   BEGIN
-      SET @ErrorMessage = 'O cep da via não pode ficar em branco.' + CHAR(13) + CHAR(10)
-                        + 'Por favor, verifique!'
-
-      RAISERROR (@ErrorMessage, 09, 01)
-      RETURN
-   END
-
-   IF ISNULL(@IdLogradouro, 00) = 00
-   BEGIN
-      SET @ErrorMessage = 'O logradouro da via não pode ficar em branco.' + CHAR(13) + CHAR(10)
-                        + 'Por favor, verifique!'
-
-      RAISERROR (@ErrorMessage, 09, 01)
-      RETURN
-   END
-
-   IF ISNULL(@IdBairro, 00) = 00
-   BEGIN
-      SET @ErrorMessage = 'O bairro a qual a via pertence não foi informado.' + CHAR(13) + CHAR(10)
-                        + 'Por favor, verifique!'
-
-      RAISERROR (@ErrorMessage, 09, 01)
-      RETURN
-   END
-
-   IF ISNULL(@NomeVia, '') = ''
-   BEGIN
-      SET @ErrorMessage = 'O nome da via não pode ficar em branco.' + CHAR(13) + CHAR(10)
-                        + 'Por favor, verifique!'
-
-      RAISERROR (@ErrorMessage, 09, 01)
-      RETURN
-   END
-
    BEGIN TRY
       BEGIN TRANSACTION
 
@@ -69,7 +33,7 @@ BEGIN
             ,LogIdUsuario
             ,LogRotina
          )
-         VALUES(
+         VALUES (
              @IdLogradouro
             ,@IdBairro
             ,@NomeVia

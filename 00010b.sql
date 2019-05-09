@@ -19,24 +19,6 @@ BEGIN
           ,@ErrorSeverity INTEGER     = 00
           ,@ErrorState INTEGER        = 00
 
-   IF ISNULL(@AbreviaturaLogradouro, '') = ''
-   BEGIN
-      SET @ErrorMessage = 'A abreviatura do logradouro não pode ficar em branco.' + CHAR(13) + CHAR(10)
-                        + 'Por favor, verifique!'
-
-      RAISERROR (@ErrorMessage, 09, 01)
-      RETURN
-   END
-
-   IF ISNULL(@DescricaoLogradouro, '') = ''
-   BEGIN
-      SET @ErrorMessage = 'A descrição do logradouro não pode ficar em branco.' + CHAR(13) + CHAR(10)
-                        + 'Por favor, verifique!'
-
-      RAISERROR (@ErrorMessage, 09, 01)
-      RETURN
-   END
-
    BEGIN TRY
       BEGIN TRANSACTION
 
@@ -48,7 +30,7 @@ BEGIN
             ,LogRotina
             ,LogDataHora
          )
-         VALUES(
+         VALUES (
              @DescricaoLogradouro
             ,@AbreviaturaLogradouro
             ,@Inativo

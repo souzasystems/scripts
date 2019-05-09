@@ -8,9 +8,6 @@ CREATE PROCEDURE enderecos.sp_ConsultaTipoZona
    @IdTipoZona TINYINT = NULL
 AS
 BEGIN
-   SET NOCOUNT ON
-   SET XACT_ABORT ON
-
    SELECT IdTipoZona
          ,DescricaoTipoZona
          ,LogIdUsuario

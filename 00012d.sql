@@ -17,15 +17,6 @@ BEGIN
           ,@ErrorSeverity INTEGER     = 00
           ,@ErrorState INTEGER        = 00
 
-   IF ISNULL(@LogMotivoExclusao, '') = ''
-   BEGIN
-      SET @ErrorMessage = 'O motivo da exclusão da via não foi informado.' + CHAR(13) + CHAR(10)
-                        + 'Por favor, informe o motivo da exclusão para que a mesma possa ser excluída.'
-
-      RAISERROR (@ErrorMessage, 11, 01)
-      RETURN
-   END
-
    BEGIN TRY
       BEGIN TRANSACTION
 

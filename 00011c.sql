@@ -20,24 +20,6 @@ BEGIN
           ,@ErrorSeverity INTEGER     = 00
           ,@ErrorState INTEGER        = 00
 
-   IF ISNULL(@IdBairro, 00) = 00
-   BEGIN
-      SET @ErrorMessage = 'O bairro a qual a quadra pertence não foi informado.' + CHAR(13) + CHAR(10)
-                        + 'Por favor, verifique!'
-
-      RAISERROR (@ErrorMessage, 09, 01)
-      RETURN
-   END
-
-   IF ISNULL(@DescricaoQuadra, '') = ''
-   BEGIN
-      SET @ErrorMessage = 'A descrição da quadra não pode ficar em branco.' + CHAR(13) + CHAR(10)
-                        + 'Por favor, verifique!'
-
-      RAISERROR (@ErrorMessage, 09, 01)
-      RETURN
-   END
-
    BEGIN TRY
       BEGIN TRANSACTION
 

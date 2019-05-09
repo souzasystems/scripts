@@ -19,35 +19,17 @@ BEGIN
           ,@ErrorSeverity INTEGER     = 00
           ,@ErrorState INTEGER        = 00
 
-   IF ISNULL(@IdBairro, 00) = 00
-   BEGIN
-      SET @ErrorMessage = 'O bairro a qual o condomínio pertence não foi informado.' + CHAR(13) + CHAR(10)
-                        + 'Por favor, verifique!'
-
-      RAISERROR (@ErrorMessage, 09, 01)
-      RETURN
-   END
-
-   IF ISNULL(@NomeCondominio, '') = ''
-   BEGIN
-      SET @ErrorMessage = 'O nome do condomínio não pode ficar em branco.' + CHAR(13) + CHAR(10)
-                        + 'Por favor, verifique!'
-
-      RAISERROR (@ErrorMessage, 09, 01)
-      RETURN
-   END
-
    BEGIN TRY
       BEGIN TRANSACTION
 
-         INSERT INTO enderecos.Condominios(
+         INSERT INTO enderecos.Condominios (
              IdBairro
             ,NomeCondominio
             ,Inativo
             ,LogIdUsuario
             ,LogRotina
          )
-         VALUES(
+         VALUES (
              @IdBairro
             ,@NomeCondominio
             ,@Inativo

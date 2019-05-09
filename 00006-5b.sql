@@ -17,15 +17,6 @@ BEGIN
           ,@ErrorSeverity INTEGER     = 00
           ,@ErrorState INTEGER        = 00
 
-   IF ISNULL(@DescricaoTipoZona, '') = ''
-   BEGIN
-      SET @ErrorMessage = 'A descrição do tipo de zona não pode ficar em branco.' + CHAR(13) + CHAR(10)
-                        + 'Por favor, verifique!'
-
-      RAISERROR (@ErrorMessage, 11, 01)
-      RETURN
-   END
-
    BEGIN TRY
       BEGIN TRANSACTION
 
@@ -33,13 +24,11 @@ BEGIN
              DescricaoTipoZona
             ,LogIdUsuario
             ,LogRotina
-            ,LogDataHora
          )
-         VALUES(
+         VALUES (
              @DescricaoTipoZona
             ,@LogIdUsuario
             ,'I'
-            ,(SELECT getDate())
          )
 
       COMMIT
