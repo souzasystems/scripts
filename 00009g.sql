@@ -5,8 +5,8 @@ END
 GO
 
 CREATE PROCEDURE enderecos.sp_ConsultaBairros
-    @Inativo BIT            = NULL
-   ,@NomeBairro VARCHAR(70) = NULL
+    @NomeBairro VARCHAR(70) = NULL
+   ,@Inativo BIT            = NULL
 AS
 BEGIN
    SELECT IdBairro

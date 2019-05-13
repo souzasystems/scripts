@@ -5,8 +5,8 @@ END
 GO
 
 CREATE PROCEDURE enderecos.sp_ConsultaQuadras
-    @Inativa BIT                 = NULL
-   ,@DescricaoQuadra VARCHAR(35) = NULL
+    @DescricaoQuadra VARCHAR(35) = NULL
+   ,@Inativa BIT                 = NULL
 AS
 BEGIN
    SELECT IdQuadra

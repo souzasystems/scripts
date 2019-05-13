@@ -1,130 +1,130 @@
-INSERT INTO LOGRADOUROS(COD_LOGRADOURO, DESC_LOGRADOURO, ABREV_LOGRADOURO, INATIVO) VALUES
-(645, 'ACAMPAMENTO', 'ACAMP', 00),
-(001, 'ACESSO', 'AC', 00),
-(002, 'ADRO', 'AD', 00),
-(501, 'AEROPORTO', 'ERA', 00),
-(004, 'ALAMEDA', 'AL', 00),
-(005, 'ALTO', 'AT', 00),
-(472, 'AREA', 'A', 00),
-(654, 'AREA ESPECIAL', 'AE', 00),
-(465, 'ARTERIA', 'ART', 00),
-(007, 'ATALHO', 'ATL', 00),
-(008, 'AVENIDA', 'AV', 00),
-(651, 'AVENIDA CONTORNO', 'AV-CONT', 00),
-(015, 'BAIXA', 'BX', 00),
-(470, 'BALAO', 'BLO', 00),
-(009, 'BALNEARIO', 'BAL', 00),
-(011, 'BECO', 'BC', 00),
-(010, 'BELVEDERE', 'BELV', 00),
-(012, 'BLOCO', 'BL', 00),
-(013, 'BOSQUE', 'BSQ', 00),
-(014, 'BOULEVARD', 'BVD', 00),
-(496, 'BURACO', 'BCO', 00),
-(016, 'CAIS', 'C', 00),
-(571, 'CALCADA', 'CALC', 00),
-(017, 'CAMINHO', 'CAM', 00),
-(023, 'CAMPO', 'CPO', 00),
-(495, 'CANAL', 'CAN', 00),
-(481, 'CHACARA', 'CHAP', 00),
-(019, 'CHAPADAO', 'CHAP', 00),
-(479, 'CIRCULAR', 'CIRC', 00),
-(021, 'COLONIA', 'COL', 00),
-(503, 'COMPLEXO VIARIO', 'CMP-VR', 00),
-(485, 'CONDOMINIO', 'COND', 00),
-(020, 'CONJUNTO', 'CJ', 00),
-(022, 'CORREDOR', 'COR', 00),
-(024, 'CORREGO', 'CRG', 00),
-(478, 'DESCIDA', 'DSC', 00),
-(027, 'DESVIO', 'DSV', 00),
-(028, 'DISTRITO', 'DT', 00),
-(468, 'ELEVADA', 'EVD', 00),
-(573, 'ENTRADA PARTICULAR', 'ENT-PART', 00),
-(652, 'ENTRE QUADRA', 'EQ', 00),
-(030, 'ESCADA', 'ESC', 00),
-(474, 'ESPLANADA', 'ESP', 00),
-(032, 'ESTACAO', 'ETC', 00),
-(564, 'ESTACIONAMENTO', 'ESTC', 00),
-(033, 'ESTADIO', 'ETD', 00),
-(498, 'ESTANCIA', 'ETN', 00),
-(031, 'ESTRADA', 'EST', 00),
-(650, 'ESTRADA MUNICIPAL', 'EST-MUN', 00),
-(036, 'FAVELA', 'FAV', 00),
-(037, 'FAZENDA', 'FAZ', 00),
-(040, 'FEIRA', 'FRA', 00),
-(038, 'FERROVIA', 'FER', 00),
-(039, 'FONTE', 'FNT', 00),
-(043, 'FORTE', 'FTE', 00),
-(045, 'GALERIA', 'GAL', 00),
-(046, 'GRANJA', 'GJA', 00),
-(486, 'HABITACIONAL', 'HAB', 00),
-(050, 'ILHA', 'IA', 00),
-(052, 'JARDIM', 'JD', 00),
-(473, 'JARDINETE', 'JDE', 00),
-(053, 'LADEIRA', 'LD', 00),
-(499, 'LAGO', 'LG', 00),
-(055, 'LAGOA', 'LGA', 00),
-(054, 'LARGO', 'LRG', 00),
-(056, 'LOTEAMENTO', 'LOT', 00),
-(477, 'MARINA', 'MNA', 00),
-(497, 'MODULO', 'MOD', 00),
-(060, 'MONTE', 'TEM', 00),
-(059, 'MORRO', 'MRO', 00),
-(500, 'NUCLEO', 'NUC', 00),
-(067, 'PARADA', 'PDA', 00),
-(471, 'PARADOURO', 'PDO', 00),
-(062, 'PARALELA', 'PAR', 00),
-(072, 'PARQUE', 'PRQ', 00),
-(074, 'PASSAGEM', 'PSG', 00),
-(502, 'PASSAGEM SUBTERRANEA', 'PSC-SUB', 00),
-(073, 'PASSARELA', 'PSA', 00),
-(063, 'PASSEIO', 'PAS', 00),
-(064, 'PATIO', 'PAT', 00),
-(483, 'PONTA', 'PNT', 00),
-(076, 'PONTE', 'PTE', 00),
-(469, 'PORTO', 'PTO', 00),
-(065, 'PRACA', 'PC', 00),
-(504, 'PRACA DE ESPORTES', 'PC-ESP', 00),
-(070, 'PRAIA', 'PR', 00),
-(071, 'PROLONGAMENTO', 'PRL', 00),
-(077, 'QUADRA', 'Q', 00),
-(079, 'QUINTA', 'QTA', 00),
-(475, 'QUINTA', 'QTAS', 00),
-(082, 'RAMAL', 'RAM', 00),
-(482, 'RAMPA', 'RMP', 00),
-(087, 'RECANTO', 'REC', 00),
-(487, 'RESIDENCIAL', 'RES', 00),
-(089, 'RETA', 'RET', 00),
-(088, 'RETIRO', 'RER', 00),
-(091, 'RETORNO', 'RTN', 00),
-(569, 'RODO ANEL', 'ROD-AN', 00),
-(090, 'RODOVIA', 'ROD', 00),
-(506, 'ROTATORIA', 'RTT', 00),
-(476, 'ROTULA', 'ROT', 00),
-(081, 'RUA', 'R', 00),
-(653, 'RUA DE LIGACAO', 'R-LIG', 00),
-(566, 'RUA DE PEDESTRE', 'R-PED', 00),
-(094, 'SERVIDAO', 'SRV', 00),
-(095, 'SETOR', 'ST', 00),
-(092, 'SITIO', 'SIT', 00),
-(096, 'SUBIDA', 'SUB', 00),
-(098, 'TERMINAL', 'TER', 00),
-(100, 'TRAVESSA', 'TV', 00),
-(570, 'TRAVESSA PARTICULAR', 'TV-PART', 00),
-(452, 'TRECHO', 'TRV', 00),
-(099, 'TREVO', 'TRV', 00),
-(097, 'TRINCHEIRA', 'TCH', 00),
-(567, 'TUNEL', 'TUN', 00),
-(480, 'UNIDADE', 'UNID', 00),
-(565, 'VALA', 'VAL', 00),
-(106, 'VALE', 'VLE', 00),
-(568, 'VARIANTE', 'VRTE', 00),
-(453, 'VEREDA', 'VER', 00),
-(101, 'VIA', 'V', 00),
-(572, 'VIA DE ACESSO', 'V-AC', 00),
-(484, 'VIA DE PEDESTRE', 'V-PED', 00),
-(505, 'VIA ELEVADO', 'V-EVD', 00),
-(646, 'VIA EXPRESSA', 'V-EXP', 00),
-(103, 'VIADUTO', 'VD', 00),
-(105, 'VIELA', 'VLA', 00),
-(104, 'VILA', 'VL', 00),
-(108, 'ZIGUE-ZAGUE', 'ZIG-ZAG', 00);
+INSERT INTO enderecos.Logradouros (DescricaoLogradouro, AbreviaturaLogradouro, LogIdUsuario, LogRotina)
+VALUES ('ACAMPAMENTO',          'ACAMP',    01, 'I')
+      ,('ACESSO',               'AC',       01, 'I')
+      ,('ADRO',                 'AD',       01, 'I')
+      ,('AEROPORTO',            'ERA',      01, 'I')
+      ,('ALAMEDA',              'AL',       01, 'I')
+      ,('ALTO',                 'AT',       01, 'I')
+      ,('AREA',                 'A',        01, 'I')
+      ,('AREA ESPECIAL',        'AE',       01, 'I')
+      ,('ARTERIA',              'ART',      01, 'I')
+      ,('ATALHO',               'ATL',      01, 'I')
+      ,('AVENIDA',              'AV',       01, 'I')
+      ,('AVENIDA CONTORNO',     'AV-CONT',  01, 'I')
+      ,('BAIXA',                'BX',       01, 'I')
+      ,('BALAO',                'BLO',      01, 'I')
+      ,('BALNEARIO',            'BAL',      01, 'I')
+      ,('BECO',                 'BC',       01, 'I')
+      ,('BELVEDERE',            'BELV',     01, 'I')
+      ,('BLOCO',                'BL',       01, 'I')
+      ,('BOSQUE',               'BSQ',      01, 'I')
+      ,('BOULEVARD',            'BVD',      01, 'I')
+      ,('BURACO',               'BCO',      01, 'I')
+      ,('CAIS',                 'C',        01, 'I')
+      ,('CALCADA',              'CALC',     01, 'I')
+      ,('CAMINHO',              'CAM',      01, 'I')
+      ,('CAMPO',                'CPO',      01, 'I')
+      ,('CANAL',                'CAN',      01, 'I')
+      ,('CHACARA',              'CHAP',     01, 'I')
+      ,('CHAPADAO',             'CHAP',     01, 'I')
+      ,('CIRCULAR',             'CIRC',     01, 'I')
+      ,('COLONIA',              'COL',      01, 'I')
+      ,('COMPLEXO VIARIO',      'CMP-VR',   01, 'I')
+      ,('CONDOMINIO',           'COND',     01, 'I')
+      ,('CONJUNTO',             'CJ',       01, 'I')
+      ,('CORREDOR',             'COR',      01, 'I')
+      ,('CORREGO',              'CRG',      01, 'I')
+      ,('DESCIDA',              'DSC',      01, 'I')
+      ,('DESVIO',               'DSV',      01, 'I')
+      ,('DISTRITO',             'DT',       01, 'I')
+      ,('ELEVADA',              'EVD',      01, 'I')
+      ,('ENTRADA PARTICULAR',   'ENT-PART', 01, 'I')
+      ,('ENTRE QUADRA',         'EQ',       01, 'I')
+      ,('ESCADA',               'ESC',      01, 'I')
+      ,('ESPLANADA',            'ESP',      01, 'I')
+      ,('ESTACAO',              'ETC',      01, 'I')
+      ,('ESTACIONAMENTO',       'ESTC',     01, 'I')
+      ,('ESTADIO',              'ETD',      01, 'I')
+      ,('ESTANCIA',             'ETN',      01, 'I')
+      ,('ESTRADA',              'EST',      01, 'I')
+      ,('ESTRADA MUNICIPAL',    'EST-MUN',  01, 'I')
+      ,('FAVELA',               'FAV',      01, 'I')
+      ,('FAZENDA',              'FAZ',      01, 'I')
+      ,('FEIRA',                'FRA',      01, 'I')
+      ,('FERROVIA',             'FER',      01, 'I')
+      ,('FONTE',                'FNT',      01, 'I')
+      ,('FORTE',                'FTE',      01, 'I')
+      ,('GALERIA',              'GAL',      01, 'I')
+      ,('GRANJA',               'GJA',      01, 'I')
+      ,('HABITACIONAL',         'HAB',      01, 'I')
+      ,('ILHA',                 'IA',       01, 'I')
+      ,('JARDIM',               'JD',       01, 'I')
+      ,('JARDINETE',            'JDE',      01, 'I')
+      ,('LADEIRA',              'LD',       01, 'I')
+      ,('LAGO',                 'LG',       01, 'I')
+      ,('LAGOA',                'LGA',      01, 'I')
+      ,('LARGO',                'LRG',      01, 'I')
+      ,('LOTEAMENTO',           'LOT',      01, 'I')
+      ,('MARINA',               'MNA',      01, 'I')
+      ,('MODULO',               'MOD',      01, 'I')
+      ,('MONTE',                'TEM',      01, 'I')
+      ,('MORRO',                'MRO',      01, 'I')
+      ,('NUCLEO',               'NUC',      01, 'I')
+      ,('PARADA',               'PDA',      01, 'I')
+      ,('PARADOURO',            'PDO',      01, 'I')
+      ,('PARALELA',             'PAR',      01, 'I')
+      ,('PARQUE',               'PRQ',      01, 'I')
+      ,('PASSAGEM',             'PSG',      01, 'I')
+      ,('PASSAGEM SUBTERRANEA', 'PSC-SUB',  01, 'I')
+      ,('PASSARELA',            'PSA',      01, 'I')
+      ,('PASSEIO',              'PAS',      01, 'I')
+      ,('PATIO',                'PAT',      01, 'I')
+      ,('PONTA',                'PNT',      01, 'I')
+      ,('PONTE',                'PTE',      01, 'I')
+      ,('PORTO',                'PTO',      01, 'I')
+      ,('PRACA',                'PC',       01, 'I')
+      ,('PRACA DE ESPORTES',    'PC-ESP',   01, 'I')
+      ,('PRAIA',                'PR',       01, 'I')
+      ,('PROLONGAMENTO',        'PRL',      01, 'I')
+      ,('QUADRA',               'Q',        01, 'I')
+      ,('QUINTA',               'QTA',      01, 'I')
+      ,('QUINTA',               'QTAS',     01, 'I')
+      ,('RAMAL',                'RAM',      01, 'I')
+      ,('RAMPA',                'RMP',      01, 'I')
+      ,('RECANTO',              'REC',      01, 'I')
+      ,('RESIDENCIAL',          'RES',      01, 'I')
+      ,('RETA',                 'RET',      01, 'I')
+      ,('RETIRO',               'RER',      01, 'I')
+      ,('RETORNO',              'RTN',      01, 'I')
+      ,('RODO ANEL',            'ROD-AN',   01, 'I')
+      ,('RODOVIA',              'ROD',      01, 'I')
+      ,('ROTATORIA',            'RTT',      01, 'I')
+      ,('ROTULA',               'ROT',      01, 'I')
+      ,('RUA',                  'R',        01, 'I')
+      ,('RUA DE LIGACAO',       'R-LIG',    01, 'I')
+      ,('RUA DE PEDESTRE',      'R-PED',    01, 'I')
+      ,('SERVIDAO',             'SRV',      01, 'I')
+      ,('SETOR',                'ST',       01, 'I')
+      ,('SITIO',                'SIT',      01, 'I')
+      ,('SUBIDA',               'SUB',      01, 'I')
+      ,('TERMINAL',             'TER',      01, 'I')
+      ,('TRAVESSA',             'TV',       01, 'I')
+      ,('TRAVESSA PARTICULAR',  'TV-PART',  01, 'I')
+      ,('TRECHO',               'TRCH',     01, 'I')
+      ,('TREVO',                'TRV',      01, 'I')
+      ,('TRINCHEIRA',           'TCH',      01, 'I')
+      ,('TUNEL',                'TUN',      01, 'I')
+      ,('UNIDADE',              'UNID',     01, 'I')
+      ,('VALA',                 'VAL',      01, 'I')
+      ,('VALE',                 'VLE',      01, 'I')
+      ,('VARIANTE',             'VRTE',     01, 'I')
+      ,('VEREDA',               'VER',      01, 'I')
+      ,('VIA',                  'V',        01, 'I')
+      ,('VIA DE ACESSO',        'V-AC',     01, 'I')
+      ,('VIA DE PEDESTRE',      'V-PED',    01, 'I')
+      ,('VIA ELEVADO',          'V-EVD',    01, 'I')
+      ,('VIA EXPRESSA',         'V-EXP',    01, 'I')
+      ,('VIADUTO',              'VD',       01, 'I')
+      ,('VIELA',                'VLA',      01, 'I')
+      ,('VILA',                 'VL',       01, 'I')
+      ,('ZIGUE-ZAGUE',          'ZIG-ZAG',  01, 'I')

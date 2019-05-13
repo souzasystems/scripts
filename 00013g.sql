@@ -5,8 +5,8 @@ END
 GO
 
 CREATE PROCEDURE enderecos.sp_ConsultaLoteamentos
-    @Inativo SMALLINT                = NULL
-   ,@DescricaoLoteamento VARCHAR(50) = NULL
+    @DescricaoLoteamento VARCHAR(50) = NULL
+   ,@Inativo SMALLINT                = NULL
 AS
 BEGIN
    SELECT IdLoteamento

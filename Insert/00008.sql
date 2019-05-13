@@ -1,7 +1,6 @@
-INSERT INTO TIPOS_TELEFONE(DESC_TIPO_TELEFONE) VALUES
-('NÃO INFORMADO'),
-('COMERCIAL'),
-('CELULAR'),
-('RESIDENCIAL'),
-('RECADO'),
-('FAX');
+INSERT INTO common.TiposTelefone (DescricaoTipoTelefone, LogIdUsuario, LogRotina)
+VALUES ('COMERCIAL',   01, 'I')
+      ,('CELULAR',     01, 'I')
+      ,('RESIDENCIAL', 01, 'I')
+      ,('RECADO',      01, 'I')
+      ,('FAX',         01, 'I')

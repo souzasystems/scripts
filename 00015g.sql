@@ -5,8 +5,8 @@ END
 GO
 
 CREATE PROCEDURE enderecos.sp_ConsultaCondominios
-    @Inativo SMALLINT           = NULL
-   ,@NomeCondominio VARCHAR(50) = NULL
+    @NomeCondominio VARCHAR(50) = NULL
+   ,@Inativo SMALLINT           = NULL
 AS
 BEGIN
    SELECT IdCondominio

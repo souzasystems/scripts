@@ -5,8 +5,8 @@ END
 GO
 
 CREATE PROCEDURE enderecos.sp_ConsultaLotes
-    @Inativo SMALLINT          = NULL
-   ,@DescricaoLote VARCHAR(25) = NULL
+    @DescricaoLote VARCHAR(25) = NULL
+   ,@Inativo SMALLINT          = NULL
 AS
 BEGIN
    SELECT IdLote

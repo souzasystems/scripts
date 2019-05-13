@@ -5,9 +5,9 @@ END
 GO
 
 CREATE PROCEDURE enderecos.sp_ConsultaVias
-    @Inativa BIT         = NULL
+    @NomeVia VARCHAR(60) = NULL
    ,@IdBairro INTEGER    = NULL
-   ,@NomeVia VARCHAR(60) = NULL
+   ,@Inativa BIT         = NULL
 AS
 BEGIN
    SELECT IdVia
