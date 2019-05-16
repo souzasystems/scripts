@@ -1,6 +1,6 @@
 IF NOT EXISTS(SELECT 01 FROM sys.Tables WHERE Name = 'Horarios')
 BEGIN
-   CREATE TABLE Common.Horarios (
+   CREATE TABLE common.Horarios (
       IdHorario SMALLINT IDENTITY(01, 01) NOT NULL,
       IdDescricaoHorario TINYINT NOT NULL,
       HoraInicial TIME NULL,
@@ -12,6 +12,6 @@ BEGIN
       LogMotivoExclusao VARCHAR(MAX) NULL,
       ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID(),
    CONSTRAINT PK_Horarios PRIMARY KEY(IdHorario),
-   CONSTRAINT FK_Horarios_DescricoesHorarios FOREIGN KEY(IdDescricaoHorario) REFERENCES Common.DescricoesHorarios(IdDescricaoHorario),
-   CONSTRAINT FK_Horarios_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES Common.Usuarios(IdUsuario))
+   CONSTRAINT FK_Horarios_DescricoesHorarios FOREIGN KEY(IdDescricaoHorario) REFERENCES common.DescricoesHorarios(IdDescricaoHorario),
+   CONSTRAINT FK_Horarios_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END

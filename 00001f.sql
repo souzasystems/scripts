@@ -13,7 +13,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM enderecos.TiposEndereco
+   FROM enderecos.TiposEndereco WITH(NOLOCK)
    ORDER BY IdTipoEndereco
 
    RETURN

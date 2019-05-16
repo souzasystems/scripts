@@ -1,6 +1,6 @@
 IF NOT EXISTS(SELECT 01 FROM sys.Tables WHERE Name = 'Produtos')
 BEGIN
-   CREATE TABLE Common.Produtos (
+   CREATE TABLE common.Produtos (
       IdProduto INTEGER IDENTITY(01, 01),
       IdGrupo SMALLINT NULL,   
       IdSubGrupo SMALLINT NULL,      
@@ -15,8 +15,8 @@ BEGIN
       LogMotivoExclusao VARCHAR(MAX) NULL,
       ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID(),
    CONSTRAINT PK_Produtos PRIMARY KEY (IdProduto),
-   CONSTRAINT FK_Produtos_Grupos FOREIGN KEY(IdGrupo) REFERENCES Common.Grupos(IdGrupo),
-   CONSTRAINT FK_Produtos_SubGrupos FOREIGN KEY(IdSubGrupo) REFERENCES Common.SubGrupos(IdSubGrupo),
-   CONSTRAINT FK_Produtos_Unidades FOREIGN KEY(IdUnidade) REFERENCES Common.Unidades(IdUnidade),
-   CONSTRAINT FK_Produtos_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES Common.Usuarios(IdUsuario))
+   CONSTRAINT FK_Produtos_Grupos FOREIGN KEY(IdGrupo) REFERENCES common.Grupos(IdGrupo),
+   CONSTRAINT FK_Produtos_SubGrupos FOREIGN KEY(IdSubGrupo) REFERENCES common.SubGrupos(IdSubGrupo),
+   CONSTRAINT FK_Produtos_Unidades FOREIGN KEY(IdUnidade) REFERENCES common.Unidades(IdUnidade),
+   CONSTRAINT FK_Produtos_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END

@@ -14,7 +14,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM enderecos.TiposEndereco
+   FROM enderecos.TiposEndereco WITH(NOLOCK)
    WHERE IdTipoEndereco = @IdTipoEndereco
    ORDER BY IdTipoEndereco
 

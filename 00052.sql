@@ -1,6 +1,6 @@
 IF NOT EXISTS(SELECT 01 FROM sys.Tables WHERE Name = 'PessoasJuridicas')
 BEGIN
-   CREATE TABLE Common.PessoasJuridicas (
+   CREATE TABLE common.PessoasJuridicas (
       IdPessoaJuridica INTEGER IDENTITY(01, 01),
       IdPessoa INTEGER NOT NULL,
       Cnpj VARCHAR(14) NULL,
@@ -15,6 +15,6 @@ BEGIN
       LogMotivoExclusao VARCHAR(MAX) NULL,
       ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID(),
    CONSTRAINT PK_PessoasJuridicas PRIMARY KEY(IdPessoaJuridica),
-   CONSTRAINT FK_PessoasJuridicas_Pessoas FOREIGN KEY(IdPessoa) REFERENCES Common.Pessoas(IdPessoa),
-   CONSTRAINT FK_PessoasJuridicas_Usuarios FOREIGN KEY (LogIdUsuario) REFERENCES Common.Usuarios(IdUsuario))
+   CONSTRAINT FK_PessoasJuridicas_Pessoas FOREIGN KEY(IdPessoa) REFERENCES common.Pessoas(IdPessoa),
+   CONSTRAINT FK_PessoasJuridicas_Usuarios FOREIGN KEY (LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END

@@ -24,7 +24,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM common.Usuarios
+   FROM common.Usuarios WITH(NOLOCK)
    WHERE Inativo = @Inativo
      AND NomeUsuario LIKE @NomeUsuario
 

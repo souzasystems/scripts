@@ -18,7 +18,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM enderecos.Estados
+   FROM enderecos.Estados WITH(NOLOCK)
    WHERE IdEstado = @IdEstado
 
    RETURN

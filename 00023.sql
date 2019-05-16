@@ -1,6 +1,6 @@
 IF NOT EXISTS(SELECT 01 FROM sys.Tables WHERE Name = 'FuncoesFuncionario')
 BEGIN
-   CREATE TABLE Common.FuncoesFuncionario (
+   CREATE TABLE common.FuncoesFuncionario (
       IdFuncaoFuncionario TINYINT IDENTITY(01, 01) NOT NULL,
       DescricaoFuncaoFuncionario VARCHAR(60),
       LogIdUsuario SMALLINT NOT NULL,
@@ -9,5 +9,5 @@ BEGIN
       LogMotivoExclusao VARCHAR(MAX) NULL,
       ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID(),
    CONSTRAINT PK_FuncoesFuncionario PRIMARY KEY(IdFuncaoFuncionario),
-   CONSTRAINT FK_FuncoesFuncionario_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES Common.Usuarios(IdUsuario))
+   CONSTRAINT FK_FuncoesFuncionario_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END

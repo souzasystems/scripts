@@ -1,6 +1,6 @@
 IF NOT EXISTS(SELECT 01 FROM sys.Tables WHERE Name = 'SetoresLancamentos')
 BEGIN
-   CREATE TABLE Common.SetoresLancamentos (
+   CREATE TABLE common.SetoresLancamentos (
       IdSetorLancamento INTEGER IDENTITY(01, 01),
       IdSetor SMALLINT NOT NULL,
       IdLancamento INTEGER NOT NULL,
@@ -10,7 +10,7 @@ BEGIN
       LogMotivoExclusao VARCHAR(MAX) NULL,
       ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID(),
    CONSTRAINT PK_SetoresLancamentos PRIMARY KEY (IdSetorLancamento),
-   CONSTRAINT FK_SetoresLancamentos_Lancamentos FOREIGN KEY(IdLancamento) REFERENCES Common.Lancamentos(IdLancamento),
-   CONSTRAINT FK_SetoresLancamentos_Setores FOREIGN KEY(IdSetor) REFERENCES Common.Setores(IdSetor),
-   CONSTRAINT FK_SetoresLancamentos_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES Common.Usuarios(IdUsuario))
+   CONSTRAINT FK_SetoresLancamentos_Lancamentos FOREIGN KEY(IdLancamento) REFERENCES common.Lancamentos(IdLancamento),
+   CONSTRAINT FK_SetoresLancamentos_Setores FOREIGN KEY(IdSetor) REFERENCES common.Setores(IdSetor),
+   CONSTRAINT FK_SetoresLancamentos_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END

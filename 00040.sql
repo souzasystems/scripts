@@ -1,6 +1,6 @@
 IF NOT EXISTS(SELECT 01 FROM sys.Tables WHERE Name = 'ProdutosLancamentos')
 BEGIN
-   CREATE TABLE Common.ProdutosLancamentos (
+   CREATE TABLE common.ProdutosLancamentos (
       IdProdutoLancamento INTEGER IDENTITY(01, 01),
       IdLancamento INTEGER NOT NULL,
       IdProduto INTEGER NOT NULL,
@@ -12,7 +12,7 @@ BEGIN
       LogMotivoExclusao VARCHAR(MAX) NULL,
       ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID(),
    CONSTRAINT PK_ProdutosLancamentos PRIMARY KEY (IdProdutoLancamento),
-   CONSTRAINT FK_ProdutosLancamentos_Lancamentos FOREIGN KEY (IdLancamento) REFERENCES Common.Lancamentos(IdLancamento),
-   CONSTRAINT FK_ProdutosLancamentos_Produtos FOREIGN KEY (IdProduto) REFERENCES Common.Produtos(IdProduto),
-   CONSTRAINT FK_ProdutosLancamentos_Usuarios FOREIGN KEY (LogIdUsuario) REFERENCES Common.Usuarios(IdUsuario))
+   CONSTRAINT FK_ProdutosLancamentos_Lancamentos FOREIGN KEY (IdLancamento) REFERENCES common.Lancamentos(IdLancamento),
+   CONSTRAINT FK_ProdutosLancamentos_Produtos FOREIGN KEY (IdProduto) REFERENCES common.Produtos(IdProduto),
+   CONSTRAINT FK_ProdutosLancamentos_Usuarios FOREIGN KEY (LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END

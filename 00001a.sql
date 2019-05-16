@@ -9,6 +9,6 @@ BEGIN
       LogMotivoExclusao VARCHAR(MAX) NULL,
       ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID(),   
    CONSTRAINT PK_TiposEndereco PRIMARY KEY(IdTipoEndereco),
-   CONSTRAINT FK_TiposEndereco_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES Common.Usuarios(IdUsuario))
+   CONSTRAINT FK_TiposEndereco_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END
 GO

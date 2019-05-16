@@ -14,7 +14,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM common.EstadosCivis
+   FROM common.EstadosCivis WITH(NOLOCK)
    WHERE IdEstadoCivil = @IdEstadoCivil
 
    RETURN

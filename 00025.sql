@@ -1,6 +1,6 @@
 IF NOT EXISTS(SELECT 01 FROM sys.Tables WHERE Name = 'MovimentosCaixa')
 BEGIN
-   CREATE TABLE Common.MovimentosCaixa (
+   CREATE TABLE common.MovimentosCaixa (
       IdMovimentoCaixa INTEGER IDENTITY(01, 01) NOT NULL,
       IdFuncionario SMALLINT NOT NULL,
       TipoMovimento CHAR(01) NULL,
@@ -12,7 +12,7 @@ BEGIN
       LogMotivoExclusao VARCHAR(MAX) NULL,
       ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID(),
    CONSTRAINT PK_MovimentosCaixa PRIMARY KEY(IdMovimentoCaixa),
-   CONSTRAINT FK_MovimentosCaixa_Funcionarios FOREIGN KEY(IdFuncionario) REFERENCES Common.Funcionarios(IdFuncionario),
-   CONSTRAINT FK_MovimentosCaixa_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES Common.Usuarios(IdUsuario))
+   CONSTRAINT FK_MovimentosCaixa_Funcionarios FOREIGN KEY(IdFuncionario) REFERENCES common.Funcionarios(IdFuncionario),
+   CONSTRAINT FK_MovimentosCaixa_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END
 

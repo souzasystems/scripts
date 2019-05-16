@@ -13,7 +13,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM common.EstadosCivis
+   FROM common.EstadosCivis WITH(NOLOCK)
    ORDER BY IdEstadoCivil
 
    RETURN

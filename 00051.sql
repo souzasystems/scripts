@@ -1,6 +1,6 @@
 IF NOT EXISTS(SELECT 01 FROM sys.Tables WHERE Name = 'PessoasFisicas')
 BEGIN
-   CREATE TABLE Common.PessoasFisicas (
+   CREATE TABLE common.PessoasFisicas (
       IdPessoaFisica INTEGER IDENTITY(01, 01),
       IdPessoa INTEGER NOT NULL,
       IdEstadoCivil TINYINT NULL,
@@ -18,8 +18,8 @@ BEGIN
       LogMotivoExclusao VARCHAR(MAX) NULL,
       ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID(),
    CONSTRAINT PK_PessoasFisicas PRIMARY KEY(IdPessoaFisica),
-   CONSTRAINT FK_PessoasFisicas_Pessoas FOREIGN KEY(IdPessoa) REFERENCES Common.Pessoas(IdPessoa),
-   CONSTRAINT FK_PessoasFisicas_EstadosCivis FOREIGN KEY(IdEstadoCivil) REFERENCES Common.EstadosCivis(IdEstadoCivil),
+   CONSTRAINT FK_PessoasFisicas_Pessoas FOREIGN KEY(IdPessoa) REFERENCES common.Pessoas(IdPessoa),
+   CONSTRAINT FK_PessoasFisicas_EstadosCivis FOREIGN KEY(IdEstadoCivil) REFERENCES common.EstadosCivis(IdEstadoCivil),
    CONSTRAINT FK_PessoasFisicas_Cidades FOREIGN KEY(IdCidade) REFERENCES Enderecos.Cidades(IdCidade),
-   CONSTRAINT FK_PessoasFisicas_Usuarios FOREIGN KEY (LogIdUsuario) REFERENCES Common.Usuarios(IdUsuario))
+   CONSTRAINT FK_PessoasFisicas_Usuarios FOREIGN KEY (LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END

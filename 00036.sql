@@ -1,6 +1,6 @@
 IF NOT EXISTS(SELECT 01 FROM sys.Tables WHERE Name = 'Lancamentos')
 BEGIN
-   CREATE TABLE Common.Lancamentos (
+   CREATE TABLE common.Lancamentos (
       IdLancamento INTEGER IDENTITY(01, 01),
       IdFormaPagamento TINYINT NOT NULL,
       TipoLancamento VARCHAR(05) NULL,
@@ -15,6 +15,6 @@ BEGIN
       LogMotivoExclusao VARCHAR(MAX) NULL,
       ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID(),
    CONSTRAINT PK_Lancamentos PRIMARY KEY (IdLancamento),
-   CONSTRAINT FK_Lancamentos_FormasPagtos FOREIGN KEY(IdFormaPagamento) REFERENCES Common.FormasPagamentos(IdFormaPagamento),
-   CONSTRAINT FK_Lancamentos_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES Common.Usuarios(IdUsuario))
+   CONSTRAINT FK_Lancamentos_FormasPagtos FOREIGN KEY(IdFormaPagamento) REFERENCES common.FormasPagamentos(IdFormaPagamento),
+   CONSTRAINT FK_Lancamentos_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END

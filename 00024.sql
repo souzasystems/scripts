@@ -1,6 +1,6 @@
 IF NOT EXISTS(SELECT 01 FROM sys.Tables WHERE Name = 'Funcionarios')
 BEGIN
-   CREATE TABLE Common.Funcionarios (
+   CREATE TABLE common.Funcionarios (
       IdFuncionario SMALLINT IDENTITY(01, 01) NOT NULL,
       IdFuncaoFuncionario TINYINT NOT NULL,
       IdDescricaoHorario TINYINT NOT NULL,
@@ -27,9 +27,9 @@ BEGIN
       LogMotivoExclusao VARCHAR(MAX) NULL,
       ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID(),
    CONSTRAINT PK_Funcionarios PRIMARY KEY (IdFuncionario),
-   CONSTRAINT FK_Funcionarios_FuncoesFuncionario FOREIGN KEY(IdFuncaoFuncionario) REFERENCES Common.FuncoesFuncionario(IdFuncaoFuncionario),
-   CONSTRAINT FK_Funcionarios_DescHorarios FOREIGN KEY(IdDescricaoHorario) REFERENCES Common.DescricoesHorarios(IdDescricaoHorario),
-   CONSTRAINT FK_Funcionarios_EstadosCivis FOREIGN KEY(IdEstadoCivil) REFERENCES Common.EstadosCivis(IdEstadoCivil),
+   CONSTRAINT FK_Funcionarios_FuncoesFuncionario FOREIGN KEY(IdFuncaoFuncionario) REFERENCES common.FuncoesFuncionario(IdFuncaoFuncionario),
+   CONSTRAINT FK_Funcionarios_DescHorarios FOREIGN KEY(IdDescricaoHorario) REFERENCES common.DescricoesHorarios(IdDescricaoHorario),
+   CONSTRAINT FK_Funcionarios_EstadosCivis FOREIGN KEY(IdEstadoCivil) REFERENCES common.EstadosCivis(IdEstadoCivil),
    CONSTRAINT FK_Funcionarios_Estados FOREIGN KEY(IdEstadoEmissao) REFERENCES Enderecos.Estados(IdEstado),
-   CONSTRAINT FK_Funcionarios_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES Common.Usuarios(IdUsuario))
+   CONSTRAINT FK_Funcionarios_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END

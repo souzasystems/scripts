@@ -23,7 +23,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM common.Usuarios
+   FROM common.Usuarios WITH(NOLOCK)
    WHERE IdUsuario = @IdUsuario
 
    RETURN

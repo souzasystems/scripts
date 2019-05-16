@@ -15,7 +15,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM common.TiposTelefone
+   FROM common.TiposTelefone WITH(NOLOCK)
    WHERE IdTipoTelefone = @IdTipoTelefone
 
    RETURN

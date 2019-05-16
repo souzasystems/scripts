@@ -1,6 +1,6 @@
 IF NOT EXISTS(SELECT 01 FROM sys.Tables WHERE Name = 'TurmasPlanos')
 BEGIN
-   CREATE TABLE Academy.TurmasPlanos (
+   CREATE TABLE academy.TurmasPlanos (
       IdTurmaPlano SMALLINT IDENTITY(01, 01),
       IdTurma SMALLINT NOT NULL,
       IdPlano TINYINT NOT NULL,
@@ -11,7 +11,7 @@ BEGIN
       LogMotivoExclusao VARCHAR(MAX) NULL,
       ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID(),
    CONSTRAINT PK_TurmasPlanos PRIMARY KEY(IdTurmaPlano),
-   CONSTRAINT FK_TurmasPlanos_Turmas FOREIGN KEY(IdTurma) REFERENCES Academy.Turmas(IdTurma),
-   CONSTRAINT FK_TurmasPlanos_Planos FOREIGN KEY(IdPlano) REFERENCES Academy.Planos(IdPlano),
-   CONSTRAINT FK_TurmasPlanos_Usuarios FOREIGN KEY (LogIdUsuario) REFERENCES Common.Usuarios(IdUsuario))
+   CONSTRAINT FK_TurmasPlanos_Turmas FOREIGN KEY(IdTurma) REFERENCES academy.Turmas(IdTurma),
+   CONSTRAINT FK_TurmasPlanos_Planos FOREIGN KEY(IdPlano) REFERENCES academy.Planos(IdPlano),
+   CONSTRAINT FK_TurmasPlanos_Usuarios FOREIGN KEY (LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END

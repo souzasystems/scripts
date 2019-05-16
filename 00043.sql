@@ -1,6 +1,6 @@
 IF NOT EXISTS(SELECT 01 FROM sys.Tables WHERE Name = 'Planos')
 BEGIN
-   CREATE TABLE Academy.Planos (
+   CREATE TABLE academy.Planos (
       IdPlano TINYINT IDENTITY(01, 01),
       NomePlano VARCHAR(25) NULL,
       PermiteDesc BIT DEFAULT 01,
@@ -16,5 +16,5 @@ BEGIN
       LogMotivoExclusao VARCHAR(MAX) NULL,
       ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID(),
    CONSTRAINT PK_Planos PRIMARY KEY(IdPlano),
-   CONSTRAINT FK_Planos_Usuarios FOREIGN KEY (LogIdUsuario) REFERENCES Common.Usuarios(IdUsuario))
+   CONSTRAINT FK_Planos_Usuarios FOREIGN KEY (LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END

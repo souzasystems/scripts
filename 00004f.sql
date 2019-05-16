@@ -20,7 +20,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM enderecos.Paises
+   FROM enderecos.Paises WITH(NOLOCK)
    WHERE Inativo = @Inativo
      AND NomePais LIKE @NomePais
 

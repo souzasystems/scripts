@@ -19,7 +19,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM enderecos.Paises
+   FROM enderecos.Paises WITH(NOLOCK)
    WHERE IdPais = @IdPais
 
    RETURN

@@ -5,8 +5,6 @@ END
 GO
 
 CREATE PROCEDURE enderecos.sp_ConsultaZonas
-    @Inativa BIT               = NULL
-   ,@DescricaoZona VARCHAR(50) = NULL
 AS
 BEGIN
    SELECT IdZona
@@ -23,8 +21,7 @@ BEGIN
          ,LogMotivoExclusao
          ,DescricaoTipoZona
    FROM vw_ZonasTiposZona
-   WHERE Inativa = @Inativa
-     AND DescricaoZona LIKE @DescricaoZona
+   ORDER BY IdZona
 
    RETURN
 END
