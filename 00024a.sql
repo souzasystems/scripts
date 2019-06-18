@@ -30,6 +30,6 @@ BEGIN
    CONSTRAINT FK_Funcionarios_FuncoesFuncionario FOREIGN KEY(IdFuncaoFuncionario) REFERENCES common.FuncoesFuncionario(IdFuncaoFuncionario),
    CONSTRAINT FK_Funcionarios_DescHorarios FOREIGN KEY(IdDescricaoHorario) REFERENCES common.DescricoesHorarios(IdDescricaoHorario),
    CONSTRAINT FK_Funcionarios_EstadosCivis FOREIGN KEY(IdEstadoCivil) REFERENCES common.EstadosCivis(IdEstadoCivil),
-   CONSTRAINT FK_Funcionarios_Estados FOREIGN KEY(IdEstadoEmissao) REFERENCES Enderecos.Estados(IdEstado),
+   CONSTRAINT FK_Funcionarios_Estados FOREIGN KEY(IdEstadoEmissao) REFERENCES enderecos.Estados(IdEstado),
    CONSTRAINT FK_Funcionarios_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END

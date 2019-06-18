@@ -8,7 +8,9 @@ CREATE PROCEDURE common.sp_ConsultaHorarios
    @IdDescricaoHorario TINYINT = NULL
 AS
 BEGIN
-   SELECT CONVERT(VARCHAR(05), HoraInicial, 108) AS HoraInicial
+   SELECT IdHorario
+         ,IdDescricaoHorario
+         ,CONVERT(VARCHAR(05), HoraInicial, 108) AS HoraInicial
          ,CONVERT(VARCHAR(05), HoraFinal, 108) AS HoraFinal
          ,CASE
              WHEN DiaSemana = 00 THEN

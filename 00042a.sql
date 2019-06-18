@@ -2,7 +2,7 @@ IF NOT EXISTS(SELECT 01 FROM sys.Tables WHERE Name = 'Terminais')
 BEGIN
    CREATE TABLE academy.Terminais (
       IdTerminal TINYINT IDENTITY(01, 01),
-      DescTerminal VARCHAR(25) NULL,
+      DescricaoTerminal VARCHAR(25) NULL,
       Inativo BIT NULL DEFAULT 01,
       LogIdUsuario SMALLINT NOT NULL,
       LogRotina VARCHAR(01) NOT NULL,
