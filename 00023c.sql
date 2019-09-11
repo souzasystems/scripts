@@ -1,10 +1,10 @@
-IF OBJECT_ID('academy.sp_AlteraFuncaoFuncionario') IS NOT NULL
+IF OBJECT_ID('common.sp_AlteraFuncaoFuncionario') IS NOT NULL
 BEGIN
-   DROP PROCEDURE academy.sp_AlteraFuncaoFuncionario
+   DROP PROCEDURE common.sp_AlteraFuncaoFuncionario
 END
 GO
 
-CREATE PROCEDURE academy.sp_AlteraFuncaoFuncionario
+CREATE PROCEDURE common.sp_AlteraFuncaoFuncionario
     @IdFuncaoFuncionario TINYINT            = NULL
    ,@DescricaoFuncaoFuncionario VARCHAR(60) = NULL
    ,@LogIdUsuario SMALLINT                  = NULL

@@ -12,6 +12,7 @@ BEGIN
          ,IdDescricaoHorario
          ,CONVERT(VARCHAR(05), HoraInicial, 108) AS HoraInicial
          ,CONVERT(VARCHAR(05), HoraFinal, 108) AS HoraFinal
+         ,DiaSemana
          ,CASE
              WHEN DiaSemana = 00 THEN
                 'DOMINGO'
@@ -27,7 +28,7 @@ BEGIN
                 'SEXTA-FEIRA'
              ELSE
                 'SÁBADO'
-          END AS DiaSemana
+          END AS DiaSemanaExtenso
          ,LogIdUsuario
          ,LogRotina
          ,LogDataHora
