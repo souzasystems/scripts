@@ -5,7 +5,8 @@ END
 GO
 
 CREATE PROCEDURE enderecos.sp_ConsultaBairro
-   @IdBairro INTEGER = NULL
+    @IdBairro INTEGER       = NULL
+   ,@NomeBairro VARCHAR(70) = NULL
 AS
 BEGIN
    SELECT IdBairro
@@ -18,7 +19,8 @@ BEGIN
          ,LogDataHora
          ,LogMotivoExclusao
    FROM enderecos.Bairros
-   WHERE IdBairro = @IdBairro
+   WHERE IdBairro   = @IdBairro
+      OR NomeBairro = @NomeBairro
 
    RETURN
 END

@@ -1,0 +1,4 @@
+IF NOT EXISTS (SELECT 01 FROM sys.Indexes WHERE NAME = 'idx_Cep')
+BEGIN
+   CREATE NONCLUSTERED INDEX idx_Cep ON enderecos.Vias (Cep) INCLUDE (IdBairro)
+END

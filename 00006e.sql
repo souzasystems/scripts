@@ -5,7 +5,8 @@ END
 GO
 
 CREATE PROCEDURE enderecos.sp_ConsultaCidade
-   @IdCidade SMALLINT = NULL
+    @IdCidade SMALLINT      = NULL
+   ,@NomeCidade VARCHAR(45) = NULL
 AS
 BEGIN
    SELECT IdCidade
@@ -19,7 +20,8 @@ BEGIN
          ,LogDataHora
          ,LogMotivoExclusao
    FROM enderecos.Cidades
-   WHERE IdCidade = @IdCidade
+   WHERE IdCidade   = @IdCidade
+      OR NomeCidade = @NomeCidade
 
    RETURN
 END

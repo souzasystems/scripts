@@ -5,7 +5,8 @@ END
 GO
 
 CREATE PROCEDURE enderecos.sp_ConsultaLogradouro
-   @IdLogradouro SMALLINT = NULL
+    @IdLogradouro SMALLINT           = NULL
+   ,@DescricaoLogradouro VARCHAR(25) = NULL
 AS
 BEGIN
    SELECT IdLogradouro
@@ -17,7 +18,8 @@ BEGIN
          ,LogDataHora
          ,LogMotivoExclusao
    FROM enderecos.Logradouros
-   WHERE IdLogradouro = @IdLogradouro
+   WHERE IdLogradouro        = @IdLogradouro
+      OR DescricaoLogradouro = @DescricaoLogradouro
 
    RETURN
 END
