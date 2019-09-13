@@ -31,48 +31,30 @@ BEGIN
    SET NOCOUNT ON
    SET XACT_ABORT ON
 
-   DECLARE @ErrorMessage VARCHAR(MAX) = ''
-          ,@ErrorSeverity INTEGER     = 00
-          ,@ErrorState INTEGER        = 00
-
-   BEGIN TRY
-      BEGIN TRANSACTION
-
-         UPDATE common.Funcionarios
-            SET IdFuncaoFuncionario          = @IdFuncaoFuncionario
-               ,IdDescricaoHorario           = @IdDescricaoHorario
-               ,IdEstadoCivil                = @IdEstadoCivil
-               ,NomeFuncionario              = @NomeFuncionario
-               ,DataAdmissao                 = @DataAdmissao
-               ,DataDemissao                 = @DataDemissao
-               ,Sexo                         = @Sexo
-               ,DataNascimento               = @DataNascimento
-               ,CPF                          = @CPF
-               ,Email                        = @Email
-               ,Inativo                      = @Inativo
-               ,NumeroCarteiraTrabalho       = @NumeroCarteiraTrabalho
-               ,NumeroPisPasep               = @NumeroPisPasep
-               ,DigitoVerificadorPisPasep    = @DigitoVerificadorPisPasep
-               ,NumeroSerie                  = @NumeroSerie
-               ,DigitoVerificadorNumeroSerie = @DigitoVerificadorNumeroSerie
-               ,IdEstadoEmissao              = @IdEstadoEmissao
-               ,DataEmissaoCarteiraTrabalho  = @DataEmissaoCarteiraTrabalho
-               ,LocalEmissaoCarteiraTrabalho = @LocalEmissaoCarteiraTrabalho
-               ,LogIdUsuario                 = @LogIdUsuario
-               ,LogRotina                    = 'A'
-               ,LogDataHora                  = (SELECT getDate())
-         WHERE IdFuncionario = @IdFuncionario
-
-      COMMIT
-   END TRY
-   BEGIN CATCH
-      SELECT @ErrorMessage  = ERROR_MESSAGE()
-            ,@ErrorSeverity = ERROR_SEVERITY()
-            ,@ErrorState    = ERROR_STATE()
-
-      RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState)
-      ROLLBACK
-   END CATCH
+   UPDATE common.Funcionarios
+      SET IdFuncaoFuncionario          = @IdFuncaoFuncionario
+         ,IdDescricaoHorario           = @IdDescricaoHorario
+         ,IdEstadoCivil                = @IdEstadoCivil
+         ,NomeFuncionario              = @NomeFuncionario
+         ,DataAdmissao                 = @DataAdmissao
+         ,DataDemissao                 = @DataDemissao
+         ,Sexo                         = @Sexo
+         ,DataNascimento               = @DataNascimento
+         ,CPF                          = @CPF
+         ,Email                        = @Email
+         ,Inativo                      = @Inativo
+         ,NumeroCarteiraTrabalho       = @NumeroCarteiraTrabalho
+         ,NumeroPisPasep               = @NumeroPisPasep
+         ,DigitoVerificadorPisPasep    = @DigitoVerificadorPisPasep
+         ,NumeroSerie                  = @NumeroSerie
+         ,DigitoVerificadorNumeroSerie = @DigitoVerificadorNumeroSerie
+         ,IdEstadoEmissao              = @IdEstadoEmissao
+         ,DataEmissaoCarteiraTrabalho  = @DataEmissaoCarteiraTrabalho
+         ,LocalEmissaoCarteiraTrabalho = @LocalEmissaoCarteiraTrabalho
+         ,LogIdUsuario                 = @LogIdUsuario
+         ,LogRotina                    = 'A'
+         ,LogDataHora                  = (SELECT getDate())
+   WHERE IdFuncionario = @IdFuncionario
 
    RETURN
 END

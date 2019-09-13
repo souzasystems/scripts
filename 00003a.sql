@@ -7,7 +7,7 @@ BEGIN
       LogRotina VARCHAR(01) NOT NULL,
       LogDataHora DATETIME NOT NULL DEFAULT (SYSDATETIME()),
       LogMotivoExclusao VARCHAR(MAX) NULL,
-      ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID(),
+      ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID() UNIQUE,
    CONSTRAINT PK_EstadosCivis PRIMARY KEY(IdEstadoCivil),
    CONSTRAINT FK_EstadosCivis_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END

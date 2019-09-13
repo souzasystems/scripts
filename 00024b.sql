@@ -31,72 +31,54 @@ BEGIN
    SET NOCOUNT ON
    SET XACT_ABORT ON
 
-   DECLARE @ErrorMessage VARCHAR(MAX) = ''
-          ,@ErrorSeverity INTEGER     = 00
-          ,@ErrorState INTEGER        = 00
+   INSERT INTO common.Funcionarios (
+       IdFuncaoFuncionario
+      ,IdDescricaoHorario
+      ,IdEstadoCivil
+      ,NomeFuncionario
+      ,DataAdmissao
+      ,DataDemissao
+      ,Sexo
+      ,DataNascimento
+      ,CPF
+      ,Email
+      ,Inativo
+      ,NumeroCarteiraTrabalho
+      ,NumeroPisPasep
+      ,DigitoVerificadorPisPasep
+      ,NumeroSerie
+      ,DigitoVerificadorNumeroSerie
+      ,IdEstadoEmissao
+      ,DataEmissaoCarteiraTrabalho
+      ,LocalEmissaoCarteiraTrabalho
+      ,LogIdUsuario
+      ,LogRotina
+   )
+   VALUES (
+       @IdFuncaoFuncionario
+      ,@IdDescricaoHorario
+      ,@IdEstadoCivil
+      ,@NomeFuncionario
+      ,@DataAdmissao
+      ,@DataDemissao
+      ,@Sexo
+      ,@DataNascimento
+      ,@CPF
+      ,@Email
+      ,@Inativo
+      ,@NumeroCarteiraTrabalho
+      ,@NumeroPisPasep
+      ,@DigitoVerificadorPisPasep
+      ,@NumeroSerie
+      ,@DigitoVerificadorNumeroSerie
+      ,@IdEstadoEmissao
+      ,@DataEmissaoCarteiraTrabalho
+      ,@LocalEmissaoCarteiraTrabalho
+      ,@LogIdUsuario
+      ,'I'
+   )
 
-   BEGIN TRY
-      BEGIN TRANSACTION
-
-         INSERT INTO common.Funcionarios (
-             IdFuncaoFuncionario
-            ,IdDescricaoHorario
-            ,IdEstadoCivil
-            ,NomeFuncionario
-            ,DataAdmissao
-            ,DataDemissao
-            ,Sexo
-            ,DataNascimento
-            ,CPF
-            ,Email
-            ,Inativo
-            ,NumeroCarteiraTrabalho
-            ,NumeroPisPasep
-            ,DigitoVerificadorPisPasep
-            ,NumeroSerie
-            ,DigitoVerificadorNumeroSerie
-            ,IdEstadoEmissao
-            ,DataEmissaoCarteiraTrabalho
-            ,LocalEmissaoCarteiraTrabalho
-            ,LogIdUsuario
-            ,LogRotina
-         )
-         VALUES (
-             @IdFuncaoFuncionario
-            ,@IdDescricaoHorario
-            ,@IdEstadoCivil
-            ,@NomeFuncionario
-            ,@DataAdmissao
-            ,@DataDemissao
-            ,@Sexo
-            ,@DataNascimento
-            ,@CPF
-            ,@Email
-            ,@Inativo
-            ,@NumeroCarteiraTrabalho
-            ,@NumeroPisPasep
-            ,@DigitoVerificadorPisPasep
-            ,@NumeroSerie
-            ,@DigitoVerificadorNumeroSerie
-            ,@IdEstadoEmissao
-            ,@DataEmissaoCarteiraTrabalho
-            ,@LocalEmissaoCarteiraTrabalho
-            ,@LogIdUsuario
-            ,'I'
-         )
-
-      COMMIT
-
-      SET @IdFuncionario = (SELECT @@IDENTITY)
-   END TRY
-   BEGIN CATCH
-      SELECT @ErrorMessage  = ERROR_MESSAGE()
-            ,@ErrorSeverity = ERROR_SEVERITY()
-            ,@ErrorState    = ERROR_STATE()
-
-      RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState)
-      ROLLBACK
-   END CATCH
+   SET @IdFuncionario = (SELECT @@IDENTITY)
 
    RETURN
 END

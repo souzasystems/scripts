@@ -32,7 +32,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM common.Funcionarios
+   FROM common.Funcionarios WITH(NOLOCK)
    WHERE IdFuncionario = @IdFuncionario
 
    RETURN

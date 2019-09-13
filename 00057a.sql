@@ -25,5 +25,6 @@ BEGIN
    CONSTRAINT FK_EnderecosFuncionarios_Lote FOREIGN KEY(IdLote) REFERENCES enderecos.Lotes(IdLote),
    CONSTRAINT FK_EnderecosFuncionarios_Quadra FOREIGN KEY(IdQuadra) REFERENCES enderecos.Quadras(IdQuadra),
    CONSTRAINT FK_EnderecosFuncionarios_Condominio FOREIGN KEY(IdCondominio) REFERENCES enderecos.Condominios(IdCondominio),
-   CONSTRAINT FK_EnderecosFuncionarios_Distrito FOREIGN KEY(IdDistrito) REFERENCES enderecos.Distritos(IdDistrito))
+   CONSTRAINT FK_EnderecosFuncionarios_Distrito FOREIGN KEY(IdDistrito) REFERENCES enderecos.Distritos(IdDistrito),
+   CONSTRAINT FK_EnderecosFuncionarios_Usuarios FOREIGN KEY(LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END
