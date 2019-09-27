@@ -18,6 +18,6 @@ CREATE VIEW vw_ZonasTiposZona AS (
          ,enderecos.Zonas.LogDataHora
          ,enderecos.Zonas.LogMotivoExclusao
          ,enderecos.TiposZona.DescricaoTipoZona
-   FROM enderecos.Zonas
+   FROM enderecos.Zonas WITH(NOLOCK)
    INNER JOIN enderecos.TiposZona ON TiposZona.IdTipoZona = Zonas.IdTipoZona
 )

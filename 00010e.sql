@@ -17,7 +17,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM enderecos.Logradouros
+   FROM enderecos.Logradouros WITH(NOLOCK)
    WHERE IdLogradouro        = @IdLogradouro
       OR DescricaoLogradouro = @DescricaoLogradouro
 

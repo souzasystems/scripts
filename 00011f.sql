@@ -15,6 +15,6 @@ CREATE VIEW vw_QuadrasBairros AS (
          ,enderecos.Quadras.LogDataHora
          ,enderecos.Quadras.LogMotivoExclusao
          ,enderecos.Bairros.NomeBairro
-   FROM enderecos.Quadras
-   INNER JOIN enderecos.Bairros ON Bairros.IdBairro = Quadras.IdBairro
+   FROM enderecos.Quadras WITH(NOLOCK)
+   INNER JOIN enderecos.Bairros WITH(NOLOCK) ON Bairros.IdBairro = Quadras.IdBairro
 )

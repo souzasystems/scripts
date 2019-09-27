@@ -5,7 +5,8 @@ END
 GO
 
 CREATE PROCEDURE enderecos.sp_ConsultaVia
-   @IdVia INTEGER = NULL
+    @IdVia INTEGER   = NULL
+   ,@Cep VARCHAR(08) = NULL
 AS
 BEGIN
    SELECT IdVia
@@ -18,8 +19,9 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM enderecos.Vias
+   FROM enderecos.Vias WITH(NOLOCK)
    WHERE IdVia = @IdVia
+      OR Cep   = @Cep
 
    RETURN
 END

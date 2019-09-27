@@ -18,35 +18,17 @@ BEGIN
    SET NOCOUNT ON
    SET XACT_ABORT ON
 
-   DECLARE @ErrorMessage VARCHAR(MAX) = ''
-          ,@ErrorSeverity INTEGER     = 00
-          ,@ErrorState INTEGER        = 00
-
-   BEGIN TRY
-      BEGIN TRANSACTION
-
-      UPDATE enderecos.Paises
-         SET NomePais      = @NomePais
-            ,Sigla02       = @Sigla02
-            ,Sigla03       = @Sigla03
-            ,CodigoIso3166 = @CodigoIso3166
-            ,NumeroDDI     = @NumeroDDI
-            ,Inativo       = @Inativo
-            ,LogIdUsuario  = @LogIdUsuario
-            ,LogRotina     = 'A'
-            ,LogDataHora   = (SELECT getDate())
-      WHERE IdPais = @IdPais
-
-      COMMIT
-   END TRY
-   BEGIN CATCH
-      SELECT @ErrorMessage  = ERROR_MESSAGE()
-            ,@ErrorSeverity = ERROR_SEVERITY()
-            ,@ErrorState    = ERROR_STATE()
-
-      RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState)
-      ROLLBACK
-   END CATCH
+   UPDATE enderecos.Paises
+      SET NomePais      = @NomePais
+         ,Sigla02       = @Sigla02
+         ,Sigla03       = @Sigla03
+         ,CodigoIso3166 = @CodigoIso3166
+         ,NumeroDDI     = @NumeroDDI
+         ,Inativo       = @Inativo
+         ,LogIdUsuario  = @LogIdUsuario
+         ,LogRotina     = 'A'
+         ,LogDataHora   = (SELECT getDate())
+   WHERE IdPais = @IdPais
 
    RETURN
 END

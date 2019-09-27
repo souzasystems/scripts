@@ -18,7 +18,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM enderecos.Bairros
+   FROM enderecos.Bairros WITH(NOLOCK)
    WHERE IdBairro   = @IdBairro
       OR NomeBairro = @NomeBairro
 

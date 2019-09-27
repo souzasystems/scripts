@@ -17,34 +17,16 @@ BEGIN
    SET NOCOUNT ON
    SET XACT_ABORT ON
 
-   DECLARE @ErrorMessage VARCHAR(MAX) = ''
-          ,@ErrorSeverity INTEGER     = 00
-          ,@ErrorState INTEGER        = 00
-
-   BEGIN TRY
-      BEGIN TRANSACTION
-
-         UPDATE enderecos.Estados
-            SET IdPais       = @IdPais
-               ,NomeEstado   = @NomeEstado
-               ,SiglaEstado  = @SiglaEstado
-               ,CodigoIBGE   = @CodigoIBGE
-               ,Inativo      = @Inativo
-               ,LogIdUsuario = @LogIdUsuario
-               ,LogRotina    = 'A'
-               ,LogDataHora  = (SELECT getDate())
-         WHERE IdEstado = @IdEstado
-
-      COMMIT
-   END TRY
-   BEGIN CATCH
-      SELECT @ErrorMessage  = ERROR_MESSAGE()
-            ,@ErrorSeverity = ERROR_SEVERITY()
-            ,@ErrorState    = ERROR_STATE()
-
-      RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState)
-      ROLLBACK
-   END CATCH
+   UPDATE enderecos.Estados
+      SET IdPais       = @IdPais
+         ,NomeEstado   = @NomeEstado
+         ,SiglaEstado  = @SiglaEstado
+         ,CodigoIBGE   = @CodigoIBGE
+         ,Inativo      = @Inativo
+         ,LogIdUsuario = @LogIdUsuario
+         ,LogRotina    = 'A'
+         ,LogDataHora  = (SELECT getDate())
+   WHERE IdEstado = @IdEstado
 
    RETURN
 END

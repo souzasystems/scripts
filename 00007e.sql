@@ -20,7 +20,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM enderecos.Zonas
+   FROM enderecos.Zonas WITH(NOLOCK)
    WHERE IdZona = @IdZona
 
    RETURN

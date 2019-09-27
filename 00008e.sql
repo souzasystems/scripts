@@ -16,7 +16,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM enderecos.Distritos
+   FROM enderecos.Distritos WITH(NOLOCK)
    WHERE IdDistrito = @IdDistrito
 
    RETURN

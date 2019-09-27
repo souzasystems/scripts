@@ -14,31 +14,13 @@ BEGIN
    SET NOCOUNT ON
    SET XACT_ABORT ON
 
-   DECLARE @ErrorMessage VARCHAR(MAX) = ''
-          ,@ErrorSeverity INTEGER     = 00
-          ,@ErrorState INTEGER        = 00
-
-   BEGIN TRY
-      BEGIN TRANSACTION
-
-         UPDATE common.TiposTelefone
-            SET DescricaoTipoTelefone = @DescricaoTipoTelefone
-               ,MascaraTelefone       = @MascaraTelefone
-               ,LogIdUsuario          = @LogIdUsuario
-               ,LogRotina             = 'A'
-               ,LogDataHora           = (SELECT getDate())
-         WHERE IdTipoTelefone = @IdTipoTelefone
-
-      COMMIT
-   END TRY
-   BEGIN CATCH
-      SELECT @ErrorMessage  = ERROR_MESSAGE()
-            ,@ErrorSeverity = ERROR_SEVERITY()
-            ,@ErrorState    = ERROR_STATE()
-
-      RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState)
-      ROLLBACK
-   END CATCH
+   UPDATE common.TiposTelefone
+      SET DescricaoTipoTelefone = @DescricaoTipoTelefone
+         ,MascaraTelefone       = @MascaraTelefone
+         ,LogIdUsuario          = @LogIdUsuario
+         ,LogRotina             = 'A'
+         ,LogDataHora           = (SELECT getDate())
+   WHERE IdTipoTelefone = @IdTipoTelefone
 
    RETURN
 END

@@ -15,6 +15,6 @@ CREATE VIEW vw_LotesLoteamentos AS (
          ,enderecos.Lotes.LogDataHora
          ,enderecos.Lotes.LogMotivoExclusao
          ,enderecos.Loteamentos.DescricaoLoteamento
-   FROM enderecos.Lotes
-   INNER JOIN enderecos.Loteamentos ON Loteamentos.IdLoteamento = Lotes.IdLoteamento
+   FROM enderecos.Lotes WITH(NOLOCK)
+   INNER JOIN enderecos.Loteamentos WITH(NOLOCK) ON Loteamentos.IdLoteamento = Lotes.IdLoteamento
 )

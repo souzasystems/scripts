@@ -8,7 +8,7 @@ BEGIN
       LogRotina VARCHAR(01) NOT NULL,
       LogDataHora DATETIME DEFAULT (SYSDATETIME()),
       LogMotivoExclusao VARCHAR(MAX) NULL,
-      ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID(),
+      ConCurrencyId VARCHAR(50) NOT NULL DEFAULT NEWID() UNIQUE,
    CONSTRAINT PK_AtividadesFuncionarios PRIMARY KEY(IdAtividadeFuncionario),
    CONSTRAINT FK_AtividadesFuncionarios_Atividades FOREIGN KEY(IdAtividade) REFERENCES academy.Atividades(IdAtividade),
    CONSTRAINT FK_AtividadesFuncionarios_Funcionarios FOREIGN KEY(IdFuncionario) REFERENCES common.Funcionarios(IdFuncionario),

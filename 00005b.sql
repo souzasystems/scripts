@@ -17,44 +17,26 @@ BEGIN
    SET NOCOUNT ON
    SET XACT_ABORT ON
 
-   DECLARE @ErrorMessage VARCHAR(MAX) = ''
-          ,@ErrorSeverity INTEGER     = 00
-          ,@ErrorState INTEGER        = 00
+   INSERT INTO enderecos.Estados (
+       IdPais
+      ,NomeEstado
+      ,SiglaEstado
+      ,CodigoIBGE
+      ,Inativo
+      ,LogIdUsuario
+      ,LogRotina
+   )
+   VALUES (
+       @IdPais
+      ,@NomeEstado
+      ,@SiglaEstado
+      ,@CodigoIBGE
+      ,@Inativo
+      ,@LogIdUsuario
+      ,'I'
+   )
 
-   BEGIN TRY
-      BEGIN TRANSACTION
-
-         INSERT INTO enderecos.Estados (
-             IdPais
-            ,NomeEstado
-            ,SiglaEstado
-            ,CodigoIBGE
-            ,Inativo
-            ,LogIdUsuario
-            ,LogRotina
-         )
-         VALUES (
-             @IdPais
-            ,@NomeEstado
-            ,@SiglaEstado
-            ,@CodigoIBGE
-            ,@Inativo
-            ,@LogIdUsuario
-            ,'I'
-         )
-
-      COMMIT
-
-      SET @IdEstado = (SELECT @@IDENTITY)
-   END TRY
-   BEGIN CATCH
-      SELECT @ErrorMessage  = ERROR_MESSAGE()
-            ,@ErrorSeverity = ERROR_SEVERITY()
-            ,@ErrorState    = ERROR_STATE()
-
-      RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState)
-      ROLLBACK
-   END CATCH
+   SET @IdEstado = (SELECT @@IDENTITY)
 
    RETURN
 END

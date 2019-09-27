@@ -5,7 +5,8 @@ END
 GO
 
 CREATE PROCEDURE enderecos.sp_ConsultaEstado
-   @IdEstado SMALLINT = NULL
+    @IdEstado SMALLINT      = NULL
+   ,@NomeEstado VARCHAR(20) = NULL
 AS
 BEGIN
    SELECT IdEstado
@@ -19,7 +20,8 @@ BEGIN
          ,LogDataHora
          ,LogMotivoExclusao
    FROM enderecos.Estados WITH(NOLOCK)
-   WHERE IdEstado = @IdEstado
+   WHERE IdEstado   = @IdEstado
+      OR NomeEstado = @NomeEstado
 
    RETURN
 END

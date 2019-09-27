@@ -15,7 +15,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM enderecos.Logradouros
+   FROM enderecos.Logradouros WITH(NOLOCK)
    ORDER BY IdLogradouro
 
    RETURN

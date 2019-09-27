@@ -13,33 +13,15 @@ BEGIN
    SET NOCOUNT ON
    SET XACT_ABORT ON
 
-   DECLARE @ErrorMessage VARCHAR(MAX) = ''
-          ,@ErrorSeverity INTEGER     = 00
-          ,@ErrorState INTEGER        = 00
+   UPDATE enderecos.Vias 
+      SET LogIdUsuario      = @LogIdUsuario
+         ,LogRotina         = 'E'
+         ,LogDataHora       = (SELECT getDate())
+         ,LogMotivoExclusao = @LogMotivoExclusao
+   WHERE IdVia = @IdVia
 
-   BEGIN TRY
-      BEGIN TRANSACTION
-
-         UPDATE enderecos.Vias 
-            SET LogIdUsuario      = @LogIdUsuario
-               ,LogRotina         = 'E'
-               ,LogDataHora       = (SELECT getDate())
-               ,LogMotivoExclusao = @LogMotivoExclusao
-         WHERE IdVia = @IdVia
-
-         DELETE FROM enderecos.Vias
-         WHERE IdVia = @IdVia
-
-      COMMIT
-   END TRY
-   BEGIN CATCH
-      SELECT @ErrorMessage  = ERROR_MESSAGE()
-            ,@ErrorSeverity = ERROR_SEVERITY()
-            ,@ErrorState    = ERROR_STATE()
-
-      RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState)
-      ROLLBACK
-   END CATCH
+   DELETE FROM enderecos.Vias
+   WHERE IdVia = @IdVia
 
    RETURN
 END

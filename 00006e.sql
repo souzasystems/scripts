@@ -19,7 +19,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM enderecos.Cidades
+   FROM enderecos.Cidades WITH(NOLOCK)
    WHERE IdCidade   = @IdCidade
       OR NomeCidade = @NomeCidade
 

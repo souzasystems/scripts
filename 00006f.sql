@@ -16,6 +16,6 @@ CREATE VIEW vw_CidadesEstados AS (
          ,enderecos.Cidades.LogDataHora
          ,enderecos.Cidades.LogMotivoExclusao
          ,enderecos.Estados.NomeEstado
-   FROM enderecos.Cidades
+   FROM enderecos.Cidades WITH(NOLOCK)
    INNER JOIN enderecos.Estados ON Estados.IdEstado = Cidades.IdEstado
 )

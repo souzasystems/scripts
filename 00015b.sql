@@ -15,40 +15,22 @@ BEGIN
    SET NOCOUNT ON
    SET XACT_ABORT ON
 
-   DECLARE @ErrorMessage VARCHAR(MAX) = ''
-          ,@ErrorSeverity INTEGER     = 00
-          ,@ErrorState INTEGER        = 00
+   INSERT INTO enderecos.Condominios (
+       IdBairro
+      ,NomeCondominio
+      ,Inativo
+      ,LogIdUsuario
+      ,LogRotina
+   )
+   VALUES (
+       @IdBairro
+      ,@NomeCondominio
+      ,@Inativo
+      ,@LogIdUsuario
+      ,'I'
+   )
 
-   BEGIN TRY
-      BEGIN TRANSACTION
-
-         INSERT INTO enderecos.Condominios (
-             IdBairro
-            ,NomeCondominio
-            ,Inativo
-            ,LogIdUsuario
-            ,LogRotina
-         )
-         VALUES (
-             @IdBairro
-            ,@NomeCondominio
-            ,@Inativo
-            ,@LogIdUsuario
-            ,'I'
-         )
-
-      COMMIT
-
-      SET @IdCondominio = (SELECT @@IDENTITY)
-   END TRY
-   BEGIN CATCH
-      SELECT @ErrorMessage  = ERROR_MESSAGE()
-            ,@ErrorSeverity = ERROR_SEVERITY()
-            ,@ErrorState    = ERROR_STATE()
-
-      RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState)
-      ROLLBACK
-   END CATCH
+   SET @IdCondominio = (SELECT @@IDENTITY)
 
    RETURN
 END

@@ -14,6 +14,6 @@ CREATE VIEW vw_LoteamentosQuadras AS (
          ,enderecos.Loteamentos.LogDataHora
          ,enderecos.Loteamentos.LogMotivoExclusao
          ,enderecos.Quadras.DescricaoQuadra
-   FROM enderecos.Loteamentos
-   INNER JOIN enderecos.Quadras ON Quadras.IdQuadra = Loteamentos.IdQuadra
+   FROM enderecos.Loteamentos WITH(NOLOCK)
+   INNER JOIN enderecos.Quadras WITH(NOLOCK) ON Quadras.IdQuadra = Loteamentos.IdQuadra
 )

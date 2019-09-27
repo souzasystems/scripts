@@ -16,32 +16,14 @@ BEGIN
    SET NOCOUNT ON
    SET XACT_ABORT ON
 
-   DECLARE @ErrorMessage VARCHAR(MAX) = ''
-          ,@ErrorSeverity INTEGER     = 00
-          ,@ErrorState INTEGER        = 00
-
-   BEGIN TRY
-      BEGIN TRANSACTION
-
-         UPDATE enderecos.Quadras
-            SET IdBairro        = @IdBairro
-               ,DescricaoQuadra = @DescricaoQuadra
-               ,Complemento     = @Complemento
-               ,Inativa         = @Inativa
-               ,LogIdUsuario    = @LogIdUsuario
-               ,LogRotina       = 'A'
-         WHERE IdQuadra = @IdQuadra
-
-      COMMIT
-   END TRY
-   BEGIN CATCH
-      SELECT @ErrorMessage  = ERROR_MESSAGE()
-            ,@ErrorSeverity = ERROR_SEVERITY()
-            ,@ErrorState    = ERROR_STATE()
-
-      RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState)
-      ROLLBACK
-   END CATCH
+   UPDATE enderecos.Quadras
+      SET IdBairro        = @IdBairro
+         ,DescricaoQuadra = @DescricaoQuadra
+         ,Complemento     = @Complemento
+         ,Inativa         = @Inativa
+         ,LogIdUsuario    = @LogIdUsuario
+         ,LogRotina       = 'A'
+   WHERE IdQuadra = @IdQuadra
 
    RETURN
 END

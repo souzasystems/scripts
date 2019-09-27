@@ -14,6 +14,6 @@ CREATE VIEW vw_DistritosCidades AS (
          ,enderecos.Distritos.LogDataHora
          ,enderecos.Distritos.LogMotivoExclusao
          ,enderecos.Cidades.NomeCidade
-   FROM enderecos.Distritos
+   FROM enderecos.Distritos WITH(NOLOCK)
    INNER JOIN enderecos.Cidades ON Cidades.IdCidade = Distritos.IdCidade
 )

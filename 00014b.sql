@@ -16,42 +16,24 @@ BEGIN
    SET NOCOUNT ON
    SET XACT_ABORT ON
 
-   DECLARE @ErrorMessage VARCHAR(MAX) = ''
-          ,@ErrorSeverity INTEGER     = 00
-          ,@ErrorState INTEGER        = 00
+   INSERT INTO enderecos.Lotes (
+       IdLoteamento
+      ,DescricaoLote
+      ,Complemento
+      ,Inativo
+      ,LogIdUsuario
+      ,LogRotina
+   )
+   VALUES (
+       @IdLoteamento
+      ,@DescricaoLote
+      ,@Complemento
+      ,@Inativo
+      ,@LogIdUsuario
+      ,'I'
+   )
 
-   BEGIN TRY
-      BEGIN TRANSACTION
-
-         INSERT INTO enderecos.Lotes (
-             IdLoteamento
-            ,DescricaoLote
-            ,Complemento
-            ,Inativo
-            ,LogIdUsuario
-            ,LogRotina
-         )
-         VALUES (
-             @IdLoteamento
-            ,@DescricaoLote
-            ,@Complemento
-            ,@Inativo
-            ,@LogIdUsuario
-            ,'I'
-         )
-
-      COMMIT
-
-      SET @IdLote = (SELECT @@IDENTITY)
-   END TRY
-   BEGIN CATCH
-      SELECT @ErrorMessage  = ERROR_MESSAGE()
-            ,@ErrorSeverity = ERROR_SEVERITY()
-            ,@ErrorState    = ERROR_STATE()
-
-      RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState)
-      ROLLBACK
-   END CATCH
+   SET @IdLote = (SELECT @@IDENTITY)
 
    RETURN
 END

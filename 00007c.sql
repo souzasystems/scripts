@@ -19,36 +19,18 @@ BEGIN
    SET NOCOUNT ON
    SET XACT_ABORT ON
 
-   DECLARE @ErrorMessage VARCHAR(MAX) = ''
-          ,@ErrorSeverity INTEGER     = 00
-          ,@ErrorState INTEGER        = 00
-
-   BEGIN TRY
-      BEGIN TRANSACTION
-
-         UPDATE enderecos.Zonas
-            SET IdTipoZona            = @IdTipoZona
-               ,DescricaoZona         = @DescricaoZona
-               ,Inativa               = @Inativa
-               ,AreaMinima            = @AreaMinima
-               ,TestadaMinima         = @TestadaMinima
-               ,ComplementoAreaMinima = @ComplementoAreaMinima
-               ,IdentificadorZona     = @IdentificadorZona
-               ,LogIdUsuario          = @LogIdUsuario
-               ,LogRotina             = 'A'
-               ,LogDataHora           = (SELECT getDate())
-         WHERE IdZona = @IdZona
-
-      COMMIT
-   END TRY
-   BEGIN CATCH
-      SELECT @ErrorMessage  = ERROR_MESSAGE()
-            ,@ErrorSeverity = ERROR_SEVERITY()
-            ,@ErrorState    = ERROR_STATE()
-
-      RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState)
-      ROLLBACK
-   END CATCH
+   UPDATE enderecos.Zonas
+      SET IdTipoZona            = @IdTipoZona
+         ,DescricaoZona         = @DescricaoZona
+         ,Inativa               = @Inativa
+         ,AreaMinima            = @AreaMinima
+         ,TestadaMinima         = @TestadaMinima
+         ,ComplementoAreaMinima = @ComplementoAreaMinima
+         ,IdentificadorZona     = @IdentificadorZona
+         ,LogIdUsuario          = @LogIdUsuario
+         ,LogRotina             = 'A'
+         ,LogDataHora           = (SELECT getDate())
+   WHERE IdZona = @IdZona
 
    RETURN
 END

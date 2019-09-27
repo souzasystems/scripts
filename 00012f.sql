@@ -17,7 +17,7 @@ CREATE VIEW vw_ViasBairros AS (
          ,enderecos.Vias.LogMotivoExclusao
          ,enderecos.Bairros.NomeBairro
          ,enderecos.Logradouros.DescricaoLogradouro
-   FROM enderecos.Vias
-   INNER JOIN enderecos.Bairros     ON Bairros.IdBairro         = Vias.IdBairro
-   INNER JOIN enderecos.Logradouros ON Logradouros.IdLogradouro = Vias.IdLogradouro
+   FROM enderecos.Vias WITH(NOLOCK)
+   INNER JOIN enderecos.Bairros     WITH(NOLOCK) ON Bairros.IdBairro         = Vias.IdBairro
+   INNER JOIN enderecos.Logradouros WITH(NOLOCK) ON Logradouros.IdLogradouro = Vias.IdLogradouro
 )

@@ -15,6 +15,6 @@ CREATE VIEW vw_BairrosCidades AS (
          ,enderecos.Bairros.LogDataHora
          ,enderecos.Bairros.LogMotivoExclusao
          ,enderecos.Cidades.NomeCidade
-   FROM enderecos.Bairros
-   INNER JOIN enderecos.Cidades ON Cidades.IdCidade = Bairros.IdCidade
+   FROM enderecos.Bairros WITH(NOLOCK)
+   INNER JOIN enderecos.Cidades WITH(NOLOCK) ON Cidades.IdCidade = Bairros.IdCidade
 )

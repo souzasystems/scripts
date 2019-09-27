@@ -17,7 +17,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM enderecos.Quadras
+   FROM enderecos.Quadras WITH(NOLOCK)
    WHERE IdQuadra = @IdQuadra
 
    RETURN

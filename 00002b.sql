@@ -14,38 +14,20 @@ BEGIN
    SET NOCOUNT ON
    SET XACT_ABORT ON
 
-   DECLARE @ErrorMessage VARCHAR(MAX) = ''
-          ,@ErrorSeverity INTEGER     = 00
-          ,@ErrorState INTEGER        = 00
+   INSERT INTO common.TiposTelefone (
+       DescricaoTipoTelefone
+      ,MascaraTelefone
+      ,LogIdUsuario
+      ,LogRotina
+   )
+   VALUES (
+       @DescricaoTipoTelefone
+      ,@MascaraTelefone
+      ,@LogIdUsuario
+      ,'I'
+   )
 
-   BEGIN TRY
-      BEGIN TRANSACTION
-
-         INSERT INTO common.TiposTelefone (
-             DescricaoTipoTelefone
-            ,MascaraTelefone
-            ,LogIdUsuario
-            ,LogRotina
-         )
-         VALUES (
-             @DescricaoTipoTelefone
-            ,@MascaraTelefone
-            ,@LogIdUsuario
-            ,'I'
-         )
-
-      COMMIT
-
-      SET @IdTipoTelefone = (SELECT @@IDENTITY)
-   END TRY
-   BEGIN CATCH
-      SELECT @ErrorMessage  = ERROR_MESSAGE()
-            ,@ErrorSeverity = ERROR_SEVERITY()
-            ,@ErrorState    = ERROR_STATE()
-
-      RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState)
-      ROLLBACK
-   END CATCH
+   SET @IdTipoTelefone = (SELECT @@IDENTITY)
 
    RETURN
 END

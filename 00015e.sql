@@ -16,7 +16,7 @@ BEGIN
          ,LogRotina
          ,LogDataHora
          ,LogMotivoExclusao
-   FROM enderecos.Condominios
+   FROM enderecos.Condominios WITH(NOLOCK)
    WHERE IdCondominio = @IdCondominio
 
    RETURN

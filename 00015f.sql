@@ -14,6 +14,6 @@ CREATE VIEW vw_CondominiosBairros AS (
          ,enderecos.Condominios.LogDataHora
          ,enderecos.Condominios.LogMotivoExclusao
          ,enderecos.Bairros.NomeBairro
-   FROM enderecos.Condominios
+   FROM enderecos.Condominios WITH(NOLOCK)
    INNER JOIN enderecos.Bairros ON Bairros.IdBairro = Condominios.IdBairro
 )

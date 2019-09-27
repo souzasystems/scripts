@@ -1,11 +1,11 @@
-IF OBJECT_ID('enderecos.sp_ExcluiZona') IS NOT NULL
+IF OBJECT_ID('academy.sp_ExcluiAtividade') IS NOT NULL
 BEGIN
-   DROP PROCEDURE enderecos.sp_ExcluiZona
+   DROP PROCEDURE academy.sp_ExcluiAtividade
 END
 GO
 
-CREATE PROCEDURE enderecos.sp_ExcluiZona
-    @IdZona SMALLINT                = NULL
+CREATE PROCEDURE academy.sp_ExcluiAtividade
+    @IdAtividade SMALLINT           = NULL
    ,@LogIdUsuario SMALLINT          = NULL
    ,@LogMotivoExclusao VARCHAR(MAX) = NULL
 AS
@@ -13,15 +13,15 @@ BEGIN
    SET NOCOUNT ON
    SET XACT_ABORT ON
 
-   UPDATE enderecos.Zonas
+   UPDATE academy.Atividades
       SET LogIdUsuario      = @LogIdUsuario
          ,LogRotina         = 'E'
          ,LogDataHora       = (SELECT getDate())
          ,LogMotivoExclusao = @LogMotivoExclusao
-   WHERE IdZona = @IdZona
+   WHERE IdAtividade = @IdAtividade
 
-   DELETE FROM enderecos.Zonas
-   WHERE IdZona = @IdZona
+   DELETE FROM academy.Atividades
+   WHERE IdAtividade = @IdAtividade
 
    RETURN
 END

@@ -16,6 +16,6 @@ CREATE VIEW vw_EstadosPaises AS (
          ,enderecos.Estados.LogDataHora
          ,enderecos.Estados.LogMotivoExclusao
          ,enderecos.Paises.NomePais
-   FROM enderecos.Estados
+   FROM enderecos.Estados WITH(NOLOCK)
    INNER JOIN enderecos.Paises ON Paises.IdPais = Estados.IdPais
 )
