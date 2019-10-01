@@ -15,3 +15,11 @@ BEGIN
    CONSTRAINT FK_TurmasPlanos_Planos FOREIGN KEY(IdPlano) REFERENCES academy.Planos(IdPlano),
    CONSTRAINT FK_TurmasPlanos_Usuarios FOREIGN KEY (LogIdUsuario) REFERENCES common.Usuarios(IdUsuario))
 END
+
+
+
+
+
+
+
+
